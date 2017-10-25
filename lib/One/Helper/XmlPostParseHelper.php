@@ -82,8 +82,8 @@ class XmlPostParseHelper
                 $onlineDebitTrans->StatusChangedDate = (string)$xmlOnlineDebit->StatusChangedDate;
                 $onlineDebitTrans->TransactionKey = (string)$xmlOnlineDebit->TransactionKey;
                 $onlineDebitTrans->TransactionReference = (string)$xmlOnlineDebit->TransactionReference;
-                $onlineDebitTrans->PreviousOnlineDebitTransactionStatus = (string)$xmlOnlineDebit->PreviousCreditCardTransactionStatus;
-                $onlineDebitTrans->OnlineDebitTransactionStatus = (string)$xmlOnlineDebit->CreditCardTransactionStatus;
+                $onlineDebitTrans->PreviousOnlineDebitTransactionStatus = (string)$xmlOnlineDebit->PreviousOnlineDebitTransactionStatus;
+                $onlineDebitTrans->OnlineDebitTransactionStatus = (string)$xmlOnlineDebit->OnlineDebitTransactionStatus;
             }
 
             $statusNotification->OnlineDebitTransaction = $onlineDebitTrans;
