@@ -220,16 +220,22 @@ class ApiClient
         } else {
             $isSuccess = true;
 
-            if (count($createSaleResponse->OnlineDebitTransactionResult) > 0) foreach ($createSaleResponse->OnlineDebitTransactionResult as $onlineDebitTransation) {
-                if (!$onlineDebitTransation->Success) $isSuccess = false;
+            if (!empty($createSaleResponse->OnlineDebitTransactionResult) && count($createSaleResponse->OnlineDebitTransactionResult) > 0) {
+                foreach ($createSaleResponse->OnlineDebitTransactionResult as $onlineDebitTransation) {
+                    if (!$onlineDebitTransation->Success) $isSuccess = false;
+                }
             }
 
-            if (count($createSaleResponse->BoletoTransactionResultCollection) > 0) foreach ($createSaleResponse->BoletoTransactionResultCollection as $boletoTransaction) {
-                if (!$boletoTransaction->Success) $isSuccess = false;
+            if (!empty($createSaleResponse->BoletoTransactionResultCollection) && count($createSaleResponse->BoletoTransactionResultCollection) > 0) {
+                foreach ($createSaleResponse->BoletoTransactionResultCollection as $boletoTransaction) {
+                    if (!$boletoTransaction->Success) $isSuccess = false;
+                }
             }
 
-            if (count($createSaleResponse->CreditCardTransactionResultCollection) > 0) foreach ($createSaleResponse->CreditCardTransactionResultCollection as $creditCardTransaction) {
-                if (!$creditCardTransaction->Success) $isSuccess = false;
+            if (!empty($createSaleResponse->CreditCardTransactionResultCollection) && count($createSaleResponse->CreditCardTransactionResultCollection) > 0) {
+                foreach ($createSaleResponse->CreditCardTransactionResultCollection as $creditCardTransaction) {
+                    if (!$creditCardTransaction->Success) $isSuccess = false;
+                }
             }
         }
 
